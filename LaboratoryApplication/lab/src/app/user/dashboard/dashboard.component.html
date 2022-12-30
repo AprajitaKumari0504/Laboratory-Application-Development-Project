@@ -1,0 +1,140 @@
+<p>dashboard works!</p>
+<!DOCTYPE html>
+<div class="d-flex justify-content-center">
+       <div class="card" style="width: 50rem;">
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+
+
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Sample Date</th>
+                    <th scope="col">Sample ID</th>
+                    <th scope="col">Heamatology</th>
+                    <th scope="col">Thyroid Profile</th>
+                    <th scope="col">Glucomtery</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>date</td>
+                    <td>dsfgh</td>
+                    <td><button   class="btn btn-primary" (click)="viewHeamatology()" data-bs-toggle="modal" data-bs-target="#viewHeamatology">View</button></td>
+                    <td><button   class="btn btn-primary" (click)="thyroid()" data-bs-toggle="modal" data-bs-target="#viewThyroid">Processing Report....</button></td>
+                    <td><button   class="btn btn-secondary" (click)="glucomtery()" data-bs-toggle="modal" data-bs-target="#viewGlucomtery">NA</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+</div>       
+</div>
+
+
+
+
+<!-- view Heamatology -->
+<div class="modal" id="viewHeamatology" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">View Heamatology Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">test Name</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>test1</td>
+                        <td>result1</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- viewThyroid -->
+  <div class="modal" id="viewThyroid" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">View Thyroid Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">test Name</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>test1</td>
+                        <td>result1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- viewglucomtery -->
+  <div class="modal" id="viewGlucomtery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">View Glucomtery Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">test Name</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>test1</td>
+                        <td>result1</td>
+                    </tr>
+                </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

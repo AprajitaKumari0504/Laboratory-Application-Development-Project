@@ -1,0 +1,186 @@
+<p>samples works!</p>
+<!DOCTYPE html>
+<div class="d-flex justify-content-center">
+       <div class="card" style="width: 50rem;">
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+
+
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Sample Date</th>
+                    <th scope="col">Patient Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Sample ID</th>
+                    <th scope="col">Heamatology</th>
+                    <th scope="col">Thyroid Profile</th>
+                    <th scope="col">Glucomtery</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td><button   class="btn btn-primary" (click)="addHeamolologyProfile()" data-bs-toggle="modal" data-bs-target="#exampleModal">AddProfile</button></td>
+                    <td><button   class="btn btn-primary" (click)="addThyroidProfile1()" data-bs-toggle="modal" data-bs-target="#exampleModal1">Add Report</button></td>
+                    <td><button   class="btn btn-primary" (click)="addGlucomteryProfile2()" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add Report</button></td>
+
+                </tr>
+                <tr>
+                    <!-- <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td><button   class="btn btn-primary" (click)="addHeamolologyProfile()">AddProfile</button></td>
+                    <td><button   class="btn btn-primary" (click)="addThyroidProfile1()">Add Report</button></td>
+                    <td><button   class="btn btn-primary" (click)="addGlucomteryProfile2()">Add Report</button></td> -->
+                </tr>
+                <tr>
+                    <!-- <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td><button   class="btn btn-primary" (click)="addHeamolologyProfile()">AddProfile</button></td>
+                    <td><button   class="btn btn-primary" (click)="addProfile1()">Add Report</button></td>
+                    <td><button   class="btn btn-primary" (click)="addProfile2()">Add Report</button></td> -->
+                </tr>
+                </tbody>
+            </table>
+        </div> 
+    </div>       
+</div>
+
+
+
+
+
+<!-- model for add profile -->
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter Heamatology Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+
+            <form [formGroup]='heamatologyForm' onsubmit="heamatologyformSubmit()">
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Heamoglobin*" class="form-control" id="Heamoglobin" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Neutrophils*" class="form-control" id="Neutrophils" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Eosinophiles*" class="form-control" id="Eosinophiles" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Basophills*" class="form-control" id="Basophills" aria-describedby="emailHelp">
+              </div>
+              
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Packed Cell Volume (PCV)*" class="form-control" id="packedcell" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Total Count/WBC*" class="form-control" id="totalcount" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Lympjocytes*" class="form-control" id="Lympjocytes" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Monocytes*" class="form-control" id="Monocytes" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Red Blood Cell*" class="form-control" id="redbloodcell" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter MEAN Corpuscular Volume(mcv)*" class="form-control" id="meanmvc" aria-describedby="emailHelp">
+              </div>  
+              <button type="submit" class="btn btn-primary">Submit</button>               
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Thyroid -->
+  <div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter Thyroid Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+
+            <form [formGroup]='thyroidForm' onclick="thyroidSubmit()">
+              <div class="mb-3">
+                <input type="text" placeholder="Enter TRY I0D0 Thyronine-T3 total*" class="form-control" id="T3" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Thyroxine-T4*" class="form-control" id="T4" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Thyroid-stimulating hormone*" class="form-control" id="thyroidstimulatinghormone" aria-describedby="emailHelp">
+              </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Glucomtery -->
+  <div class="modal" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Enter Glucomtery Report</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="justify-content-center">
+
+            <form [formGroup]='glucomteryForm' onsubmit="glucomteryformSubmit()">
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Fasting Bood Sugar*" class="form-control" id="fastingBloodsuger" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Post Parandile Blood Sugar*" class="form-control" id="ppbs" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Glycosylated Heamoglobin(HbA1C)*" class="form-control" id="hbA1c" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Enter Calcium*" class="form-control" id="calcium" aria-describedby="emailHelp">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

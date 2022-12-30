@@ -1,0 +1,33 @@
+<p>registration works!</p>
+<!DOCTYPE html>
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 50rem; margin-top: 20px;">
+      <div class="card-body">
+          <!-- <form> -->
+          <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+              <h4 style="text-align: center;">Please Register!!!!</h4>
+              <div class="mb-3">
+                <input type="text" formControlName="name" placeholder="Enter Full Name*" class="form-control" id="name" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <input type="email" formControlName="email" placeholder="Enter Email*" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+              <div class="mb-3">
+                <input type="password" formControlName="password" placeholder="Enter Password*" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                  <select class="form-select" formControlName="role" aria-label="Default select example">
+                      <option disabled="disabled">Role*</option>
+                      <option value="admin">Admin</option>
+                      <option value="user">User</option>
+                  </select>
+                  </div>
+              <div class="col-md-12 bg-light text-end">
+                  <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
+            <a routerLink="/login">go to login page for login yourself</a>
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Laboratory</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+        <li class="nav-item" *ngIf="isLoggedIn && !isAdmin">
+          <!-- <li class="nav-item"> -->
+          <a class="nav-link active" aria-current="page" routerLink="#" >Dashboard</a>
+        </li>
+          
+        <li class="nav-item" *ngIf="isAdmin">
+          <!-- <li class="nav-item"> -->
+          <a class="nav-link" routerLink="/samples">Samples</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <!-- <li class="nav-item">  -->
+          <a class="nav-link" routerLink="/entersamples">Enter Samples</a>
+        </li>
+  
+      </ul>
+        <div class="d-flex">
+            <div class="nav-item" *ngIf="!isLoggedIn">
+              <!-- <div class="nav-item"> -->
+              <a class="navbar-brand" routerLink="/registration">Registration</a>
+            </div>
+            <div *ngIf="!isLoggedIn">
+              <!-- <div> -->
+              <a class="navbar-brand" routerLink="/login">Login</a>
+            </div>
+            <div *ngIf="isLoggedIn">
+              <!-- <div> -->
+              <a class="navbar-brand" (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</nav>
+<!-- <router-outlet></router-outlet> -->
+<router-outlet (activate)="activate($event)" (deactivate)="deactivate()"></router-outlet>
+<!-- <app-login (loggedIn)="logIn($event)"></app-login> -->
+<!-- <app-samples></app-samples>
+<app-entersamples></app-entersamples>
+<app-register></app-register> -->
